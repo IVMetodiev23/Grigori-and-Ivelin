@@ -19,7 +19,8 @@ void printBook(Book book) {
 
 void printLibrary(Library lib)
 {
-	while (lib.books != nullptr)
+	cout << lib.name << endl;
+	for (int i = 0; i < lib.count; i++)
 	{
 		cout << "title: " << lib.books->title << endl;
 		cout << "author: " << lib.books->author << endl;
@@ -32,7 +33,7 @@ void printLibrary(Library lib)
 double averageBookPrice(Library lib)
 {
 	double sum = 0;
-	while (lib.books != nullptr)
+	for (int i = 0; i < lib.count; i++)
 	{
 		sum += lib.books->price;
 		lib.books++;
@@ -43,7 +44,7 @@ double averageBookPrice(Library lib)
 Book oldestBookInLibrary(Library lib)
 {
 	Book oldest = *lib.books;
-	while (lib.books != nullptr)
+	for (int i = 0; i < lib.count-1; i++)
 	{
 		lib.books++;
 		if (lib.books->year < oldest.year)
